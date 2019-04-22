@@ -1,6 +1,6 @@
 FROM tomcat:8.5.38-jre8
 
-RUN rm -fR $CATALINA_HOME/webapps/ROOT
+RUN rm -fR $CATALINA_HOME/webapps/*
 
 ARG WAR_URL
 RUN wget ${WAR_URL}
