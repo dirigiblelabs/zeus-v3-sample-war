@@ -1,4 +1,3 @@
-ARG WAR_URL
 FROM tomcat:8.5.38-jre8
 
 #RUN echo "Before rm /webapps/"
@@ -8,6 +7,7 @@ RUN rm -fR $CATALINA_HOME/webapps/*
 
 #RUN echo "Before ARG"
 #RUN echo "Before wget from ARG"
+ARG WAR_URL
 RUN wget -O ROOT.war ${WAR_URL} --no-check-certificate
 
 #RUN echo "Before cp WAR"
