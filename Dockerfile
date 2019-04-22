@@ -8,7 +8,7 @@ FROM tomcat:8.5.38-jre8
 
 #RUN echo "Before ARG"
 #RUN echo "Before wget from ARG"
-#RUN wget -O ROOT.war ${WAR_URL} --no-check-certificate
+RUN wget -O ROOT.war ${WAR_URL} --no-check-certificate
 
 #RUN echo "Before cp WAR"
 #RUN cp -a *.war $CATALINA_HOME/webapps/
