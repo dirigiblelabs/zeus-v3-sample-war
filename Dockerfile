@@ -1,11 +1,16 @@
 FROM tomcat:8.5.38-jre8
 
-RUN rm -R $CATALINA_HOME/webapps/*
+RUN echo "Before rm /webapps/"
+RUN rm -fR $CATALINA_HOME/webapps/*
+RUN echo "Before rm CURL - GitHub"
 RUN curl https://raw.githubusercontent.com/dirigiblelabs/zeus-v3-sample-war/master/test_postgre.war -o ROOT.war
 
+RUN echo "Before ARG"
 ARG WAR_URL
+RUN echo "Before wget from ARG"
 RUN wget -O ROOT.war ${WAR_URL} --no-check-certificate
 
+RUN echo "Before cp WAR"
 RUN cp -a *.war $CATALINA_HOME/webapps/
 
 #ARG JDBC_DRIVER_URL=https://jdbc.postgresql.org/download/postgresql-42.2.5.jar 
