@@ -3,7 +3,7 @@ FROM tomcat:8.5.38-jre8
 RUN rm -R $CATALINA_HOME/webapps/*
 
 ARG WAR_URL
-RUN wget ${WAR_URL}
+RUN wget -O ROOT.war ${WAR_URL} --no-check-certificate
 
 RUN cp -a *.war $CATALINA_HOME/webapps/
 
