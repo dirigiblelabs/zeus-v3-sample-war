@@ -18,4 +18,4 @@ ADD https://jdbc.postgresql.org/download/postgresql-42.2.5.jar $CATALINA_HOME/li
 
 COPY *.jar $CATALINA_HOME/lib/
 
-RUN sed -i /'<Context>'/c'<Context>\n<Listener className=\"com.sap.cloud.runtime.kotyo.tomcat.support.NamingResourcesListener\" factoryClassName=\"io.dirigible.smart.datasource.object.factory.SmartDatasourceObjectFactory\"/>' $CATALINA_HOME/conf/context.xml
+# RUN sed -i /'<Context>'/c'<Context>\n<Listener className=\"com.sap.cloud.runtime.kotyo.tomcat.support.NamingResourcesListener\" factoryClassName=\"io.dirigible.smart.datasource.object.factory.SmartDatasourceObjectFactory\"/>' $CATALINA_HOME/conf/context.xml
