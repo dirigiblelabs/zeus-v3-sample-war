@@ -8,8 +8,8 @@ RUN rm -fR $CATALINA_HOME/webapps/*
 #RUN echo "Before ARG"
 #RUN echo "Before wget from ARG"
 ARG WAR_URL
-RUN wget -O ROOT.war https://cmis.ingress.pro.promart.shoot.canary.k8s-hana.ondemand.com/services/v3/js/ide-documents/api/read/document/download?path=/abcd.war --no-check-certificate
-#RUN wget -O ROOT.war ${WAR_URL} --no-check-certificate
+# RUN wget -O ROOT.war https://cmis.ingress.pro.promart.shoot.canary.k8s-hana.ondemand.com/services/v3/js/ide-documents/api/read/document/download?path=/abcd.war --no-check-certificate
+RUN wget -O ROOT.war ${WAR_URL} --no-check-certificate
 
 #RUN echo "Before cp WAR"
 RUN cp -a *.war $CATALINA_HOME/webapps/
