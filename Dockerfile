@@ -3,7 +3,7 @@ FROM tomcat:8.5.38-jre8
 RUN rm -fR $CATALINA_HOME/webapps/*
 
 ARG WAR_URL
-RUN curl -O ${WAR_URL}
+RUN curl -v -O ${WAR_URL}
 
 RUN cp -a *.war $CATALINA_HOME/webapps/
 
